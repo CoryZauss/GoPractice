@@ -33,7 +33,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
 
-//? to run our server  type " go run serverCounter.go " into the terminal then head to  http://localhost:8081/world
+//? to run our server  type " go run serverCounter.go " into the terminal then head to  http://localhost:8081/increment .. every time we refresh the counter goes up.
 
 //! let’s try incrementing a counter every time a specific URL is hit. Due to the fact that the web server is asynchronous, we’ll have to guard our counter using a mutex in order to prevent us from being hit with race-condition bugs.
 //? A race condition occurs when two or more threads can access shared data and they try to change it at the same time. Because the thread scheduling algorithm can swap between threads at any time, you don't know the order in which the threads will attempt to access the shared data. Therefore, the result of the change in data is dependent on the thread scheduling algorithm, i.e. both threads are "racing" to access/change the data.
